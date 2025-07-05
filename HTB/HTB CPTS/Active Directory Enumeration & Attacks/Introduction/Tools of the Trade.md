@@ -1,0 +1,50 @@
+
+Tools:
+- PowerView/SharpView
+- BloodHound
+- SharpHound
+- BloodHound.py
+- Kerbrute
+- Impacket toolkit
+- Responder
+- Inveigh.ps1
+- C# Inveigh (InveighZero)
+- rpcinfo
+- rpcclient
+- CrackMapExec (CME)
+- Rubeus
+- GetUserSPNs.py
+- Hashcat
+- enum4linux
+- enum4linux-ng
+- ldapsearch
+- windapsearch
+- DomainPasswordSpray.ps1
+- LAPSToolkit
+- smbmap
+- psexec.py
+- wmiexec.py
+- Snaffler
+- smbserver.py
+- setspn.exe
+- Mimikatz
+- secretsdump.py
+- evil-winrm
+- mssqlclient.py
+- noPac.py
+- rpcdump.py
+- CVE-2021-1675.py
+- ntlmrelayx.py
+- PetitPotam.py
+- gettgtpkinit.py
+- getnthash.py
+- adidnsdump
+- gpp-decrypt
+- GetNPUsers.py
+- lookupsid.py
+- ticketer.py
+- raiseChild.py
+- Active Directory Explorer
+- PingCastle
+- Group3r
+- ADRecon

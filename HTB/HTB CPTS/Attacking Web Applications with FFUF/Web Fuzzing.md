@@ -1,4 +1,3 @@
-Web Fuzzing
 
 Fuzzing: a testing technique that sends various types of user input to a certain interface to study how it would react.
 
@@ -7,6 +6,9 @@ Buffer overflow: send long strings and increment their length and see if binary 
 
 Wordlists: /opt/useful/SecLists
 
+```shell-session
 locate directory-list-2.3-small.txt
+```
+
 
 If the wordlist has copyright comments, use '-ic' flag to get rid of these lines in ffuf.

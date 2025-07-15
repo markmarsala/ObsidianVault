@@ -1,4 +1,3 @@
-Intro to Web Proxies
 
 Web proxies focus on port 80 and 443
 

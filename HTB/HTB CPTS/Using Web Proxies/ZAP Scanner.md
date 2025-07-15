@@ -1,4 +1,3 @@
-ZAP Scanner
 
 ## Spider
 

@@ -1,4 +1,3 @@
-Intercepting Responses
 
 Burp -> Proxy > Options > Intercept Server Responses > Intercept Response > [CTRL+SHIFT+R] to force a full refresh
 Forward then we see the intercepted response.

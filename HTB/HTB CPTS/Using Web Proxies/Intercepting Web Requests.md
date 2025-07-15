@@ -1,4 +1,3 @@
-Intercepting Requests
 
 Burp -> Proxy -> Intercept -> forward
 ZAP -> Click green button in top right OR [CTRL + B] -> click [+] to forward

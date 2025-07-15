@@ -1,4 +1,3 @@
-## Burp Scanner
 
 Not in the free version.
 

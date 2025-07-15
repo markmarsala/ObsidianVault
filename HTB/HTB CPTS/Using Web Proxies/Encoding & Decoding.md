@@ -1,4 +1,3 @@
-Encoding / Decoding
 
 ## Encoding - Decoder tab
 

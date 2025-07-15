@@ -1,4 +1,3 @@
-## ZAP Fuzzer
 
 Attack > fuzz
 

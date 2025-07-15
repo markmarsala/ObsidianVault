@@ -1,4 +1,3 @@
-Repeating Requests
 
 ### Proxy History
 Burp -> Proxy > HTTP History

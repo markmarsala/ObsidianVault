@@ -8,6 +8,7 @@
  - Default-Credentials/default-passwords.txt
 
 ## Dictionary Solver
+```shell-session
 import requests
 
 ip = "127.0.0.1"  # Change this to your instance IP address
@@ -28,3 +29,4 @@ for password in passwords:
         print(f"Correct password found: {password}")
         print(f"Flag: {response.json()['flag']}")
         break
+```

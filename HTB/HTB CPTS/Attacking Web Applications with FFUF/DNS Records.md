@@ -1,9 +1,9 @@
-DNS Records
 
 If the dns name is not found in /etc/hosts or the public DNS, it will fail. For a local website, we must add it to /etc/hosts
 
 ## Add to /etc/hosts
+```shell-session
 sudo sh -c 'echo "SERVER_IP  academy.htb" >> /etc/hosts'
+```
 
 Now, we can visit http://academy.htb:PORT
-

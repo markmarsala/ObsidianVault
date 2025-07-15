@@ -1,8 +1,0 @@
-Filtering Results
-
-## Filter out response sizes of 900 (which was the response size for vhosts that don't exist)
-ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb' -fs 900
-
-If you find a vhost, add it to /etc/hosts and then visit the webpage on a browser.
-
-

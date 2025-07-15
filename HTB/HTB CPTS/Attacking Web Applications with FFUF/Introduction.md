@@ -1,4 +1,3 @@
-Introduction
 
 FFUF is used for:
 - Fuzzing for directories

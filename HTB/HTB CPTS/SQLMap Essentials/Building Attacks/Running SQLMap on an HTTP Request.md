@@ -17,3 +17,29 @@ sqlmap 'http://www.example.com/' --data 'uid=1*&name=test'
 ```
 - If the uid is prone, label it with '*' special marker
 
+## Full HTTP Requests (can be JSON or XML as well)
+```shell-session
+sqlmap -r req.txt
+```
+- In order to get the full HTTP request, use Burp and write it to a file, or with your browser, do Copy > Copy Request Headers
+- Similar to the --data option, we can specify the parameter we want to inject in with an \*, such as '/id=*'
+
+## Custom SQLMap Requests
+```shell-session
+sqlmap ... -H='Cookie:PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
+```
+```shell-session
+sqlmap ... --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
+```
+- '--host'
+- '--referer'
+- '-A/--user-agent'
+- '--random-agent'
+- '--mobile'
+
+We can also try to inject the HTTP header values by putting in the custom injection mark (e.g. --cookie="id=1*")
+
+**PUT
+```shell-session
+sqlmap -u www.target.com --data='id=1' --method PUT
+```

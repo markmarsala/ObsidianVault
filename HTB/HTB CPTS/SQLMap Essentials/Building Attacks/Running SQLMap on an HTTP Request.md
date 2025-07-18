@@ -43,3 +43,6 @@ We can also try to inject the HTTP header values by putting in the custom inject
 ```shell-session
 sqlmap -u www.target.com --data='id=1' --method PUT
 ```
+
+## Dump database
+- '--batch --dump'

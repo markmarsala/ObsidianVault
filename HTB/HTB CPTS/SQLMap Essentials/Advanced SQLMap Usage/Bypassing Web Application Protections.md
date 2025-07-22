@@ -16,13 +16,20 @@ sqlmap -u "http://www.example.com/?id=1&h=c4ca4238a0b923820dcc509a6f75849b" --ev
 ```
 
 ## IP Address Concealing
---proxy (e.g. --proxy="sock4://177.39.187.70:33283")
+--proxy (e.g. --proxy="sock4://177.39.187.70:33283") (add a working proxy before)
+--proxy-file (list of proxies)
+--tor (use tor)
+--check-tor (to see if connected to tor properly)
 
 ## WAF Bypass
+--skip-waf
 
 ## User-agent Blacklisting Bypass
+--random-agent
 
 ## Tamper Scripts
+--tamper (--tamper=between,randomcase)
+--list-tampers
 - 0eunion
 - base64encode
 - between
@@ -44,3 +51,4 @@ sqlmap -u "http://www.example.com/?id=1&h=c4ca4238a0b923820dcc509a6f75849b" --ev
 - versionmorekeywords
 
 ## Miscellaneous Bypasses
+--chunked (chunked transfer encoding and HTTP parameter pollution)

@@ -127,7 +127,7 @@ Found at: C:\Windows\System32\dsquery.dll
 dsquery user
 dsquery computer
 dsquery * "CN=Users,DC=INLANEFREIGHT,DC=LOCAL"
-dsquery * -filter "(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=32))" -attr distinguishedName userAccountControl
+dsquery * -filter "(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=32))" -attr distinguishedName userAccountControl Description
 dsquery * -filter "(userAccountControl:1.2.840.113556.1.4.803:=8192)" -limit 5 -attr sAMAccountName
 ```
 - Last one searches for domain controller

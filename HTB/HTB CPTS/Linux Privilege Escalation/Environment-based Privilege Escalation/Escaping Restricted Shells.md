@@ -21,3 +21,8 @@ ls -l `pwd`
 
 **Shell Functions
 - Define a shell functions that execute a command
+
+
+```shell-session
+while read line; do echo "$line"; done < flag.txt
+```

@@ -10,7 +10,7 @@ Files:
 
 **MySQL database credentials inside WordPress config
 ```shell-session
-grep DB_USER\|DB_PASSWORD' wp-config.php
+grep 'DB_USER\|DB_PASSWORD' wp-config.php
 ```
 
 **Credentials in web root

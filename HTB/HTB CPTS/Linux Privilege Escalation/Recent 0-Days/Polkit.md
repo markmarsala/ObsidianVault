@@ -15,10 +15,10 @@ Three additional programs:
 pkexec -u root id
 ```
 
-**Vulnerability
+**Vulnerability (Compile on docker ubuntu 20.04)
 ```shell-session
-git clone https://github.com/arthepsy/CVE-2021-4034.git
+git clone https://github.com/berdav/CVE-2021-4034.git
 cd CVE-2021-4034
-gcc cve-2021-4034-poc.c -o poc
+make
 ./poc
 ```

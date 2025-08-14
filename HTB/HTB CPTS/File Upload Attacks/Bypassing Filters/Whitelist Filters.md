@@ -45,3 +45,5 @@ for char in '%20' '%0a' '%00' '%0d0a' '/' '.\\' '.' '…' ':'; do
 done
 ```
 - With this, we can run Burp Intruder fuzzing
+
+**Remember: uncheck URL Encode in Burp Intruder!!!!!

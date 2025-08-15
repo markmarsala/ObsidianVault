@@ -1,4 +1,4 @@
-## Bypass Blacklisted Operators
++## Bypass Blacklisted Operators
 One at a time, test characters to see if they are blacklisted.
 - %0a       \n              success
 - +         space            fail

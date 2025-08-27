@@ -75,7 +75,7 @@ enable_xp_cmdshell
 
 **Enumerating Rights on the System using xp_cmdshell
 ```
-whoami /priv
+xp_cmdshell whoami /priv
 ```
 SeImpersonatePrivilege tools:
 - https://github.com/ohpe/juicy-potato

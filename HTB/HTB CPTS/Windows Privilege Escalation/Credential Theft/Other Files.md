@@ -27,7 +27,7 @@ Get-ChildItem C:\ -Recurse -Include *.rdp, *.config, *.vnc, *.cred -ErrorAction 
 ## Sticky Notes Passwords
 
 ```ps
-ls C:\Users\<user>\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState
+ls C:\Users\user\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState
 ```
 - Download the plum.sqlite* files to attack host
 - Open in DB BRowser for SQLite

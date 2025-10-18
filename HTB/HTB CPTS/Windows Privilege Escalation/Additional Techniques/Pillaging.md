@@ -84,6 +84,7 @@ copy $env:APPDATA\Mozilla\Firefox\Profiles\*.default-release\cookies.sqlite .
 ```
 
 **Extract Slack Cookie from Firefox Cookies Database
+https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/cookieextractor.py
 ```
 python3 cookieextractor.py --dbpath "/home/plaintext/cookies.sqlite" --host slack --cookie d
 ```

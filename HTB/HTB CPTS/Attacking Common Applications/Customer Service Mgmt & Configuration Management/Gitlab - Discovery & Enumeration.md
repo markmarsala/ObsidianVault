@@ -8,6 +8,8 @@
 
 ## Enumeration
 
+Find version by signing in and going to /help
+
 Browse to gitlab.inlanefreight.local:8081/explore
 
 Sign-up page: gitlab.inlanefreight.local:8081/users/sign_up

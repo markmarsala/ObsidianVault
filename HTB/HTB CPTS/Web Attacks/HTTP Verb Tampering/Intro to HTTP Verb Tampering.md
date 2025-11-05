@@ -10,6 +10,7 @@ HTTP Verbs:
 - OPTIONS
 - TRACE
 - PATCH
+- TRACK
 
 ## Insecure Configurations
 For example, a system admin may use the following configuration to require authentication on a particular web page:

@@ -135,6 +135,7 @@ http://172.16.8.20/Login?returnurl=%2fadmin
 
 **NFS
 ```
+cd /tmp
 proxychains showmount -e 172.16.8.20
 mkdir DEV01
 mount -t nfs 172.16.8.20:/DEV01 /tmp/DEV01

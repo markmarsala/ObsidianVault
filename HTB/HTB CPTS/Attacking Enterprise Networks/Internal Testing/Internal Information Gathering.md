@@ -146,6 +146,7 @@ ls
 cat web.config
 ```
 - Administrator:D0tn31Nuk3R0ck$$@123 (DNN creds)
+- High-risk finding: Insecure File Share
 
 **Might as well use tcpdump since we have root on dmz01
 ```

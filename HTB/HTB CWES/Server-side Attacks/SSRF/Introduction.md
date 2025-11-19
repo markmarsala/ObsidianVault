@@ -1,0 +1,3 @@
+- http:// and https://
+- file://
+- gopher://

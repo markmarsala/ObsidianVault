@@ -1,0 +1,4 @@
+- Firewall rules
+- Whitelist
+- Prevent arbitrary protocols
+- Input sanitization

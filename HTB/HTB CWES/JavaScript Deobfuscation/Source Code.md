@@ -1,3 +1,5 @@
+CTRL + U to look at source code.
+
 ```
 <script src="secret.js"></script>
 ```

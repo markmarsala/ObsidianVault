@@ -1,0 +1,4 @@
+- Ensure user input is not inserted into XSL data before processing by the XSLT processor.
+- Sanitization
+- Input validation
+- Run XSLT processor as a low-privilege process

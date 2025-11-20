@@ -1,0 +1,4 @@
+- Validation
+- Sanitization
+- Turn off certain directives
+- Restrict the use of SSI to particular file extensions and particular directories

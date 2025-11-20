@@ -1,0 +1,10 @@
+## Session Fixation
+
+When a new token isn't generated after successful authentication.
+
+Attacker can send a user a link, like http://example.com/?sid=123456.
+When user signs in, the cookie is set to the sid, and since this doesn't change, the attacker can log in with that cookie to their account.
+
+
+## Improper Session Timeout
+If not set, the session is indefinite.

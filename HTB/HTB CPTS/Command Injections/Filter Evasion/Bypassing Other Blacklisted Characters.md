@@ -32,6 +32,12 @@ Test payload:
 - Success
 
 
+**Inserting a bash command
+```
+$(c'a't)
+$(l's')
+```
+
 ## Windows CMD
 To do the same thing, echo a Windows variable, specify starting position, and negative end position
 

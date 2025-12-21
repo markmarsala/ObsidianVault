@@ -9,7 +9,7 @@ curl -v http://inlanefreight.htb:35480
 
 **What is the API key in the hidden admin directory that you have discovered on the target system?
 ```
-gobuster vhost -u http://inlanefreight.htb:35480 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain
+gobuster vhost -u http://inlanefreight.htb:35480 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain -t 300
 ffuf -w /usr/share/dirb/wordlists/common.txt -u http://web1337.inlanefreight.htb:43113/FUZZ
 curl http://web1337.inlanefreight.htb:43113/robots.txt
 curl http://web1337.inlanefreight.htb:43113/admin_h1dd3n/

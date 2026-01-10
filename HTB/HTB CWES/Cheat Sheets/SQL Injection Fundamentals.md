@@ -17,6 +17,7 @@ mysql -u root -h docker.hackthebox.eu -P 3306 -p
 admin' or '1'='1' or '1'='1
 admin')-- -
 ```
+- https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/Intruder/Auth_Bypass.txt
 
 **Union injection
 ```

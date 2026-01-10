@@ -18,6 +18,7 @@ printenv
 **Spaces
 ```
 %09
+%0a%09
 ${IFS}
 {ls,-la}
 ```

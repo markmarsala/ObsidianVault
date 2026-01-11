@@ -7,7 +7,7 @@ Ubiquiti UniFi AP = ubnt:ubnt
 
 ## Hydra
 ```
-hydra [-l login] | -L file] [-p PASS | -P file] [-C file] -m MODULE [service://server[:PORT][/OPT]]
+hydra [-l login] | -L file] [-p PASS | -P file] [-C file] [-s port] -m MODULE [service://server[:PORT][/OPT]]
 hydra -l admin -P /path/to/password_list.txt ftp://192.168.1.100
 hydra -l root -P /path/to/password_list.txt ssh://192.168.1.100
 hydra -l admin -P /path/to/password_list.txt 127.0.0.1 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"

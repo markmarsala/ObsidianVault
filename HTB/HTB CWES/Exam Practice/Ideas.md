@@ -11,6 +11,7 @@ Attack path:
 - Login to admin portal with cookie
 - test ?s for LFI
 - Image upload -> get file path -> LFI ???
+- Image Upload -> XXE -> LFI
 
 **PR
 Make sure to properly test the login form. The following modules cover related attacks:

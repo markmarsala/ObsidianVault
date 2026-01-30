@@ -1,0 +1,5 @@
+- Directories
+- Files and extensions
+- Hidden vhosts
+- PHP parameters
+- Parameter values

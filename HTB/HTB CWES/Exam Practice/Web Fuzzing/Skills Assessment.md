@@ -21,6 +21,7 @@ Check different parameters (GET, PUT, POST) and filter by size.
 ffuf -w /opt/useful/seclists/Discovery/Web-Content/burp-parameter-names.txt -u http://admin.academy.htb:30525/admin/admin.php -X POST -d "FUZZ=key" -H 'Content-Type: application/x-www-form-urlencoded' -fs 798
 ffuf -w numbers.txt -u http://admin.academy.htb:30525/admin/admin.php -X POST -d "id=FUZZ" -H 'Content-Type: application/x-www-form-urlencoded' -fs 768
 ```
+- If says "method not used," change it to the correct method and do -d "FUZZ=key" again.
 
 
 Check for subdomains first potentially

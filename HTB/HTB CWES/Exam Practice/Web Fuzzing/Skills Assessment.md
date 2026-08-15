@@ -16,8 +16,20 @@ curl http://hidden.fuzzing_fun.htb:35044/godeep/stoneedge/bbclone/typo3/
 ```
 
 
-CHECK DIFFERENT PARAMETERS (GET, PUT, POST) and filter by size.
+Check different parameters (GET, PUT, POST) and filter by size.
 ```
 ffuf -w /opt/useful/seclists/Discovery/Web-Content/burp-parameter-names.txt -u http://admin.academy.htb:30525/admin/admin.php -X POST -d "FUZZ=key" -H 'Content-Type: application/x-www-form-urlencoded' -fs 798
 ffuf -w numbers.txt -u http://admin.academy.htb:30525/admin/admin.php -X POST -d "id=FUZZ" -H 'Content-Type: application/x-www-form-urlencoded' -fs 768
+```
+
+
+Check for subdomains first potentially
+```
+gobuster vhost -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://fuzzing_fun.htb:35044/ --append-domain >> vhost.txt
+cat vhost.txt | grep 200
+```
+
+Check for extensions before pages
+```
+ffuf -w /usr/share/seclists/Discovery/Web-Content/web-extensions.txt -u http://faculty.academy.htb:31833/indexFUZZ -c -ic -fs 985
 ```
